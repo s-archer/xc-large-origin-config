@@ -1,0 +1,39 @@
+variable "lb_fqdn" {
+  type        = string
+  description = "FQDN for the app. If you have delegated domain `prod.example.com`, then your app_domain can be `<app_name>.prod.example.com`"
+  default     = "*.domain.com"
+}
+
+variable "name" {
+  type        = string
+  description = "Unique short name for the app."
+  default     = "shortname"
+}
+
+variable "namespace" {
+  type        = string
+  description = "Volterra app namespace where the object will be created. This cannot be system or shared ns."
+  default     = "my-namespace"
+}
+
+variable "waf_name" {
+  type    = string
+  default = "my-waf"
+}
+
+variable "waf_namespace" {
+  type    = string
+  default = "shared"
+}
+
+variable "volt_api_url" {
+  type        = string
+  description = "Volterra tenant api url"
+  default = "https://example.com/api"
+}
+
+variable "volt_api_p12_file" {
+  type        = string
+  description = "Volterra tenant api key"
+  default     = "../../location/api-creds.p12"
+}
