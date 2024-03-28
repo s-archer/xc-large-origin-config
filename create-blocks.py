@@ -1,3 +1,7 @@
+# Test with 8 customers per backend server and 180 backend server blocks
+num_customers = 8
+number_of_blocks = 180
+
 def generate_block_suffix(index):
     name = ""
     while index >= 0:
@@ -92,9 +96,7 @@ def generate_lb_route_block(block_suffix):
   }}
 '''
 
-# Test with 4 customers and 3 blocks
-num_customers = 8
-number_of_blocks = 180
+
 hcl_codes = generate_hcl_code(num_customers, number_of_blocks)
 write_to_file("x_locals-regex.tf", hcl_codes)
 
